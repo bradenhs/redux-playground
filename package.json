@@ -1,0 +1,45 @@
+{
+  "name": "redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm run build:dependencies",
+    "start": "webpack-dev-server --config webpack/src.config.js --content-base ./ --inline",
+    "build:src": "webpack --config webpack/src.config.js",
+    "build:dependencies": "webpack --config webpack/dependencies.config.js",
+    "build:production": "scripts/build_production.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/es6-promise": "0.0.32",
+    "@types/lodash": "^4.14.41",
+    "@types/material-ui": "^0.16.41",
+    "@types/react": "^0.14.49",
+    "@types/react-dom": "^0.14.18",
+    "@types/react-tap-event-plugin": "0.0.30",
+    "awesome-typescript-loader": "^3.0.0-beta.17",
+    "css-loader": "^0.26.0",
+    "material-ui": "^0.16.6",
+    "node-sass": "^3.13.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "tslint": "^4.3.1",
+    "tslint-eslint-rules": "^2.2.1",
+    "tslint-jsdoc-rules": "^0.1.2",
+    "tslint-loader": "^3.2.0",
+    "tslint-react": "^2.0.0",
+    "typescript": "^2.1.4",
+    "webpack": "^2.2.0-rc.0",
+    "webpack-dev-server": "^2.2.0-rc.0"
+  },
+  "dependencies": {
+    "es6-promise": "^4.0.5",
+    "lodash": "^4.17.2",
+    "material-ui": "^0.16.4",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-tap-event-plugin": "^2.0.1"
+  }
+}
