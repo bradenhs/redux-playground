@@ -6,7 +6,7 @@ var PRODUCTION = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: './src/index.tsx',
-  devtool: PRODUCTION ? false : 'eval',
+  devtool: PRODUCTION ? false : 'source-map',
   performance: {
     hints: PRODUCTION ? 'warning' : false,
   },

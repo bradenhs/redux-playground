@@ -7,20 +7,24 @@ es6Promise.polyfill();
 // Libraries
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as MUI from 'material-ui';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import * as injectTapEventPlugin from 'react-tap-event-plugin';
+import { todoApp } from '~/reducers';
+
+// My Code
+import { App } from '~/components';
 
 // Remove 300ms delay for click events
 injectTapEventPlugin();
+
+let store = createStore(todoApp);
 
 const appContainer = document.querySelector('#app-container');
 
 function render() {
   ReactDOM.render(
-    <MuiThemeProvider>
-      <MUI.FlatButton label='Hello'/>
-    </MuiThemeProvider>,
+    <Provider store={ store }><App/></Provider>,
     appContainer,
   );
 }
